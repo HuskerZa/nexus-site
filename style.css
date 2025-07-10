@@ -42,3 +42,19 @@ button:hover {
   margin: auto;
 }
 add style.css file
+button {
+  background-color: #ff3c00;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff0000;
+  color: white;
+}

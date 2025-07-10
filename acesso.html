@@ -10,20 +10,21 @@
   <h1>Acesso Restrito</h1>
   <p>Insira a credencial de agente nível N5:</p>
 
-  <input type="text" placeholder="Ex: AGENTE-N5" />
+  <input id="credencial" placeholder="Ex: AGENTE-N5" />
   <br><br>
-  <button onclick="verificarSenha()">Acessar</button>
+  <button onclick="verificarCredencial()">Acessar</button>
 
   <p id="resposta"></p>
 
   <script>
-    function verificarSenha() {
-      const senha = document.getElementById('Senha').value;
-      if (senha  === "Nexus") { window.location.href =
-        "arquivos.html";
-        } else {
+    function verificarCredencial() {
+      const input = document.getElementById('credencial').value.trim();
+      const resposta = document.getElementById('resposta');
 
-        document.GetElementedById("mensagem").innerText = "ACESSO NEGADO. Esta tentativa foi registrada.";
+      if (input === "NEXUS") {
+        window.location.href = "arquivos.html";
+      } else {
+        resposta.innerText = "ACESSO NEGADO. Esta tentativa foi registrada.";
       }
     }
   </script>

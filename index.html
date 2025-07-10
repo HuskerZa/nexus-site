@@ -14,15 +14,25 @@
       align-items: center;
       height: 100vh;
       text-align: center;
+      animation: fadeIn 1s ease-in;
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
     h1 {
       font-size: 3em;
-      margin-bottom: 0;
+      margin-bottom: 0.3em;
     }
+
     p {
       margin-bottom: 30px;
       font-size: 1.1em;
+      color: #ff6666;
     }
+
     button {
       background-color: #ff0000;
       color: black;
@@ -30,14 +40,28 @@
       padding: 15px 30px;
       font-size: 1em;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: 0.4s;
     }
+
     button:hover {
-      background-color: #aa0000;
+      background-color: #cc0000;
+      transform: scale(1.05);
+    }
+
+    img.logo {
+      width: 100px;
+      margin-bottom: 20px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
     }
   </style>
 </head>
 <body>
+  <img src="logo-nexus.png" alt="Logo NEXUS" class="logo">
   <h1>Organização NEXUS</h1>
   <p>Portal de acesso restrito. Apenas agentes autorizados.</p>
   <button onclick="location.href='acesso.html'">ACESSAR ARQUIVOS</button>

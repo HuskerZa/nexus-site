@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Login Funcionários - Nexus</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #eee;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+    input {
+      padding: 10px;
+      font-size: 1.1em;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1.1em;
+      background-color: #0f62fe;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0353e9;
+    }
+  </style>
+  <script>
+    function verificarSenha() {
+      const senha = document.getElementById('senha').value;
+      if (senha === 'Nexus') {
+        window.location.href = 'acesso.html'; // Página dos funcionários
+      } else {
+        alert('Senha incorreta! Tente novamente.');
+      }
+    }
+
+    // Permite entrar ao apertar Enter no input
+    window.onload = function() {
+      const inputSenha = document.getElementById('senha');
+      inputSenha.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+          verificarSenha();
+        }
+      });
+    }
+  </script>
+</head>
+<body>
+  <h1>Área Restrita - Nexus</h1>
+  <input type="password" id="senha" placeholder="Digite a senha" autofocus />
+  <button onclick="verificarSenha()">Entrar</button>
+</body>
+</html>

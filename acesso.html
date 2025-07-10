@@ -2,172 +2,124 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Acesso Restrito | NEXUS</title>
+  <title>Acesso Restrito - NEXUS</title>
   <style>
     body {
       background-color: #000;
       color: #ff3c00;
       font-family: 'Courier New', monospace;
       text-align: center;
-      padding: 40px;
-      background-image: repeating-linear-gradient(
-        0deg, rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05) 1px,
-        transparent 1px, transparent 3px
-      );
+      padding: 50px;
     }
 
-    img.logo {
-      width: 100px;
-      margin-bottom: 20px;
+    img {
+      width: 120px;
+      margin-bottom: 30px;
+      filter: drop-shadow(0 0 10px red);
     }
 
     h1 {
       font-size: 28px;
-      text-shadow: 0 0 8px red;
+      text-shadow: 0 0 5px red;
     }
 
-    .terminal-text {
-      font-size: 16px;
-      animation: blink 1s infinite;
-      margin: 10px 0 30px;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    input {
-      background-color: #000;
-      color: #ff3c00;
-      border: 1px solid #ff3c00;
+    input[type="password"] {
       padding: 10px;
-      width: 250px;
-      font-family: 'Courier New', monospace;
-    }
-
-    .botoes {
-      margin-top: 20px;
-    }
-
-    .botoes button {
-      background-color: #ff3c00;
-      color: black;
+      font-size: 16px;
       border: none;
-      padding: 12px 20px;
-      margin: 10px;
-      cursor: pointer;
-      font-weight: bold;
-      font-family: 'Courier New', monospace;
-      box-shadow: 0 0 5px red;
-    }
-
-    .botoes button:hover {
-      background-color: red;
-      color: white;
-    }
-
-    #mensagem {
-      margin-top: 15px;
-      font-weight: bold;
+      background-color: #111;
       color: red;
+      border-bottom: 2px solid red;
+      width: 220px;
     }
 
-    #som-btn {
-      background-color: transparent;
-      border: 1px solid #ff3c00;
-      color: #ff3c00;
-      margin-top: 20px;
-      padding: 8px 16px;
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      background-color: red;
+      color: #000;
+      font-weight: bold;
+      border: none;
       cursor: pointer;
     }
 
-    #secreto {
+    button:hover {
+      background-color: darkred;
+    }
+
+    .escondido {
       display: none;
+    }
+
+    #botaoEmergencia {
+      background-color: #ff0000;
+      animation: piscar 1s infinite;
+    }
+
+    @keyframes piscar {
+      0%, 100% { background-color: #900; }
+      50% { background-color: #f00; }
+    }
+
+    .lema {
+      margin-top: 60px;
+      font-style: italic;
+      font-size: 15px;
+      color: #ff6666;
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo da NEXUS -->
-  <img src="logo-nexus.jpg" alt="NEXUS Logo" class="logo">
+  <!-- LOGO -->
+  <img src="logo.jpg" alt="Logo da NEXUS">
 
-  <h1>ACESSO RESTRITO</h1>
-  <p class="terminal-text">:: DIGITE SUA CREDENCIAL ::</p>
+  <h1>Área de Acesso Restrito</h1>
 
-  <input type="password" id="senha" placeholder="Senha de acesso">
-  <div class="botoes">
-    <button onclick="acessarArquivos()">📁 Arquivos</button>
-    <button onclick="acessarFuncionarios()">🧍 Funcionários</button>
-    <button onclick="acessarOcorrencias()">⚠ Ocorrências</button>
-    <button id="secreto" onclick="acessarSecreto()">🕳 Projeto NECRO-X</button>
+  <p>Insira sua credencial:</p>
+  <input type="password" id="senha" placeholder="Digite a senha">
+  <br>
+  <button onclick="verificarAcesso()">Acessar</button>
+
+  <!-- Botões principais (EOC) -->
+  <div id="botoesPrincipais" class="escondido">
+    <button onclick="window.location.href='arquivos.html'">📁 Arquivos</button>
+    <button onclick="window.location.href='funcionarios.html'">🧑‍💼 Funcionários</button>
+    <button onclick="window.location.href='ocorrencias.html'">🚨 Ocorrências</button>
   </div>
 
-  <p id="mensagem"></p>
-  <button id="som-btn" onclick="toggleSom()">Ativar Som Ambiente</button>
+  <!-- Botão Emergência (SOS) -->
+  <button id="botaoEmergencia" class="escondido" onclick="window.location.href='emergencia.html'">
+    ⚠ MODO DE EMERGÊNCIA
+  </button>
 
-  <audio id="ambiente" loop>
-    <source src="https://cdn.pixabay.com/audio/2022/10/20/audio_03c10bc0d1.mp3" type="audio/mpeg">
-  </audio>
+  <!-- Botão Secreto (NECRO-X) -->
+  <button id="botaoSecreto" class="escondido" onclick="window.location.href='necrox.html'">
+    ☣ Acesso Classe Ω
+  </button>
+
+  <!-- Lema -->
+  <div class="lema">“Se existir será observado. Se resistir será contido.”</div>
 
   <script>
-    function acessarArquivos() {
-      const senha = document.getElementById("senha").value.trim();
-      if (senha === "EOC") {
-        localStorage.setItem("acessoLiberado", "true");
-        window.location.href = "arquivos.html";
-      } else {
-        document.getElementById("mensagem").innerText = "ACESSO NEGADO.";
-      }
-    }
+    function verificarAcesso() {
+      const senha = document.getElementById('senha').value;
 
-    function acessarFuncionarios() {
-      const senha = document.getElementById("senha").value.trim();
-      if (senha === "EOC") {
-        localStorage.setItem("acessoLiberado", "true");
-        window.location.href = "niveis.html";
+      if (senha === 'EOC') {
+        document.getElementById('botoesPrincipais').classList.remove('escondido');
+      } else if (senha === 'SOS') {
+        document.getElementById('botaoEmergencia').classList.remove('escondido');
+        alert('PROTOCOLO DE EMERGÊNCIA DETECTADO');
+      } else if (senha === 'NECRO-X') {
+        document.getElementById('botaoSecreto').classList.remove('escondido');
+        alert('ACESSO DE NÍVEL Ω CONCEDIDO.');
       } else {
-        document.getElementById("mensagem").innerText = "ACESSO NEGADO.";
+        alert('Senha incorreta');
       }
-    }
 
-    function acessarOcorrencias() {
-      const senha = document.getElementById("senha").value.trim();
-      if (senha === "EOC") {
-        localStorage.setItem("acessoLiberado", "true");
-        window.location.href = "ocorrencias.html";
-      } else {
-        document.getElementById("mensagem").innerText = "ACESSO NEGADO.";
-      }
+      // Limpa a senha após digitar
+      document.getElementById('senha').value = '';
     }
-
-    function acessarSecreto() {
-      alert("🔒 Acessando Projeto NECRO-X...");
-      window.location.href = "necrox.html";
-    }
-
-    function toggleSom() {
-      const audio = document.getElementById("ambiente");
-      const btn = document.getElementById("som-btn");
-      if (audio.paused) {
-        audio.play();
-        btn.innerText = "Desativar Som Ambiente";
-      } else {
-        audio.pause();
-        btn.innerText = "Ativar Som Ambiente";
-      }
-    }
-
-    // Detecta a senha secreta para liberar botão oculto
-    document.getElementById("senha").addEventListener("input", function () {
-      const senha = this.value.trim();
-      const botaoSecreto = document.getElementById("secreto");
-      if (senha === "NECRO-X") {
-        botaoSecreto.style.display = "inline-block";
-      } else {
-        botaoSecreto.style.display = "none";
-      }
-    });
   </script>
 
 </body>

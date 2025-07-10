@@ -6,37 +6,63 @@
   <style>
     body {
       background-color: #000;
-      color: #ff4444;
+      color: #ff3333;
       font-family: 'Courier New', monospace;
       text-align: center;
-      padding-top: 100px;
+      padding-top: 60px;
+      animation: fadeIn 1s ease-in;
     }
+
     input {
       padding: 10px;
       background-color: #111;
       color: #ff4444;
       border: 1px solid #ff4444;
       font-size: 1em;
+      margin-top: 10px;
     }
+
     button {
       margin-top: 15px;
-      padding: 10px 20px;
+      padding: 10px 25px;
       background-color: #ff0000;
       color: black;
       border: none;
       cursor: pointer;
+      transition: 0.3s;
     }
+
+    button:hover {
+      background-color: #aa0000;
+    }
+
     .msg {
       margin-top: 20px;
       color: #888;
     }
+
+    img.logo {
+      width: 80px;
+      margin-bottom: 20px;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
   </style>
 </head>
 <body>
+  <img src="logo-nexus.png" alt="Logo NEXUS" class="logo">
   <h1>Acesso Restrito</h1>
   <p>Insira a credencial de agente nível N5:</p>
-  <input type="password" id="senha" placeholder="Ex: AGENTE-N5">
-  <br>
+  <input type="password" id="senha" placeholder="Ex: AGENTE-N5"><br>
   <button onclick="verificar()">Acessar</button>
   <div class="msg" id="msg"></div>
 
@@ -44,7 +70,7 @@
     function verificar() {
       var senha = document.getElementById("senha").value;
       if (senha.toLowerCase() === "nexus" || senha === "AGENTE-N5") {
-        window.location.href = "arquivos.html";
+        window.location.href = "credencial.html"; // ou "arquivos.html"
       } else {
         document.getElementById("msg").innerText = "ACESSO NEGADO. Esta tentativa foi registrada.";
       }

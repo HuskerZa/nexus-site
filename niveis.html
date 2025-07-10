@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NÍVEIS DE AGENTES - NEXUS</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #ff3300;
+      font-family: 'Courier New', monospace;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-bottom: 40px;
+      text-shadow: 0 0 5px red;
+    }
+
+    .nivel {
+      border-left: 8px solid #ff3300;
+      background-color: #1a1a1a;
+      margin-bottom: 30px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px rgba(255, 51, 0, 0.1);
+    }
+
+    .nivel:hover {
+      background-color: #2a2a2a;
+      transform: scale(1.02);
+      box-shadow: 0 0 25px rgba(255, 51, 0, 0.3);
+    }
+
+    .nivel h2 {
+      margin-top: 0;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nivel p {
+      margin: 6px 0;
+      color: #f2f2f2;
+    }
+
+    .n1 { border-color: #888888; }
+    .n2 { border-color: #00ffff; }
+    .n3 { border-color: #00ff00; }
+    .n4 { border-color: #ffa500; }
+    .n5 { border-color: #ff0000; }
+
+    .voltar {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .voltar a {
+      color: #ff3300;
+      border: 1px solid #ff3300;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .voltar a:hover {
+      background-color: #ff3300;
+      color: black;
+    }
+
+    .link {
+      color: #00ffff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .emoji {
+      font-size: 22px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>CLASSIFICAÇÃO DE AGENTES</h1>
+
+  <div class="nivel n1">
+    <h2><span class="emoji">🟤</span> NÍVEL N1 — Iniciantes</h2>
+    <p>🔒 Acesso: Apenas treinamento e arquivos públicos.</p>
+    <p>📋 Permissões: Suporte remoto. Nenhum acesso a criaturas.</p>
+    <p>🧪 Entidades relacionadas: Nenhuma.</p>
+  </div>
+
+  <div class="nivel n2">
+    <h2><span class="emoji">🔵</span> NÍVEL N2 — Operadores de Campo</h2>
+    <p>🔒 Acesso: Zonas de contenção de baixo risco e relatórios internos.</p>
+    <p>📋 Permissões: Transporte de entidades até NX-002.</p>
+    <p>🧪 Entidades relacionadas: <span class="link" onclick="location.href='arquivos.html#nx2'">NX-002</span></p>
+  </div>
+
+  <div class="nivel n3">
+    <h2><span class="emoji">🟢</span> NÍVEL N3 — Supervisores Técnicos</h2>
+    <p>🔒 Acesso: Laboratórios, zonas restritas e arquivos sensíveis.</p>
+    <p>📋 Permissões: Estudo e contato controlado com criaturas até NX-005.</p>
+    <p>🧪 Entidades relacionadas: <span class="link" onclick="location.href='arquivos.html#nx5'">NX-005</span></p>
+  </div>
+
+  <div class="nivel n4">
+    <h2><span class="emoji">🟠</span> NÍVEL N4 — Diretores Regionais</h2>
+    <p>🔒 Acesso: Todos os arquivos da instalação e protocolos de contenção globais.</p>
+    <p>📋 Permissões: Reclassificação de ameaças, decisões críticas e acesso às zonas de quarentena total.</p>
+    <p>🧪 Entidades relacionadas: <span class="link" onclick="location.href='arquivos.html#nx7'">NX-007</span>, <span class="link" onclick="location.href='arquivos.html#nx8'">NX-008</span></p>
+  </div>
+
+  <div class="nivel n5">
+    <h2><span class="emoji">🔴</span> NÍVEL N5 — Conselho NEXUS</h2>
+    <p>🔒 Acesso: Tudo. Entidades, protocolos de evacuação, experimentos ocultos.</p>
+    <p>📋 Permissões: Controle absoluto da corporação. Pode iniciar autodestruição global da base se necessário.</p>
+    <p>🧪 Entidades relacionadas: <span class="link" onclick="location.href='arquivos.html#nx10'">NX-010</span></p>
+  </div>
+
+  <div class="voltar">
+    <a href="index.html">⬅ VOLTAR AO INÍCIO</a>
+  </div>
+
+</body>
+</html>

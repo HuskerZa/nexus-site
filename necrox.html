@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Projeto NECRÓX | CLASSIFICADO</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ff0000;
+      font-family: 'Courier New', monospace;
+      padding: 40px;
+      overflow: hidden;
+      animation: glitchBackground 1.5s infinite;
+    }
+
+    @keyframes glitchBackground {
+      0% { background-color: #000; }
+      50% { background-color: #110000; }
+      100% { background-color: #000; }
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      animation: glitchText 1s infinite;
+      text-shadow: 0 0 8px red;
+    }
+
+    @keyframes glitchText {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-2px); }
+      40% { transform: translateX(2px); }
+      60% { transform: translateX(-1px); }
+      80% { transform: translateX(1px); }
+      100% { transform: translateX(0); }
+    }
+
+    .aviso {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: bold;
+      font-size: 16px;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .conteudo {
+      background-color: #111;
+      border: 2px solid #ff0000;
+      padding: 20px;
+      margin: auto;
+      max-width: 700px;
+      box-shadow: 0 0 15px red;
+    }
+
+    .poema {
+      font-style: italic;
+      margin-top: 30px;
+      color: #ff5050;
+      border-top: 1px dashed red;
+      padding-top: 15px;
+    }
+
+    .voltar {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .voltar a {
+      color: #ff0000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .voltar a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚠ ACESSO MÁXIMO — PROJETO NECRÓX</h1>
+  <p class="aviso">CLASSIFICAÇÃO: NIVEL 6 | SOMENTE DIRETORES</p>
+
+  <div class="conteudo">
+    <p><strong>Descrição:</strong> O Projeto NECRÓX é uma entidade ou inteligência não identificada, localizada nos subterrâneos do Setor 9, cujos registros foram deliberadamente apagados da memória da NEXUS por uma falha de segurança desconhecida. Todas as tentativas de recontato resultaram em perda de equipe.</p>
+
+    <p><strong>Status:</strong> ❌ Totalmente Incontido</p>
+
+    <p><strong>Último Registro:</strong> “O vazio olha de volta... e agora responde.”</p>
+
+    <div class="poema">
+      Na sombra antiga ele dormia,  
+      Silêncio além do que o som alcança.  
+      Mas chamaram por seu nome esquecido,  
+      E agora... a morte dança.
+    </div>
+  </div>
+
+  <div class="voltar">
+    <a href="acesso.html">← Voltar ao Terminal</a>
+  </div>
+
+</body>
+</html>

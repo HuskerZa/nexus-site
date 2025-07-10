@@ -1,0 +1,44 @@
+body {
+  background-color: #000;
+  color: #ff3300;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  margin-top: 100px;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 18px;
+}
+
+input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff3300;
+  color: #000;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff0000;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+}
+add style.css file

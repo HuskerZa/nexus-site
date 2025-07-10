@@ -1,1 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Protocolo de Emergência - NEXUS-Ω</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      color: red;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      overflow: hidden;
+    }
 
+    #container {
+      padding-top: 100px;
+      animation: flash 1s infinite;
+    }
+
+    @keyframes flash {
+      0% { background-color: black; }
+      50% { background-color: darkred; }
+      100% { background-color: black; }
+    }
+
+    h1 {
+      font-size: 48px;
+      text-shadow: 0 0 10px red;
+    }
+
+    .lema {
+      margin-top: 80px;
+      font-size: 20px;
+      color: #ff4c4c;
+    }
+
+    #acesso {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      padding: 30px;
+      border: 2px solid red;
+      box-shadow: 0 0 10px red;
+    }
+
+    input[type='password'] {
+      padding: 10px;
+      font-size: 16px;
+      width: 200px;
+      border: none;
+      background: black;
+      color: red;
+      border-bottom: 2px solid red;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: red;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkred;
+    }
+  </style>
+</head>
+<body>
+
+<div id="acesso">
+  <h2>Autenticação de Emergência</h2>
+  <p>Insira o código de emergência:</p>
+  <input type="password" id="senha" placeholder="Senha de emergência">
+  <br>
+  <button onclick="verificarSenha()">ATIVAR</button>
+</div>
+
+<div id="container" style="display: none;">
+  <h1>⚠ PROTOCOLO NEXUS-Ω ATIVADO ⚠</h1>
+  <h1>TODAS AS UNIDADES EM ALERTA MÁXIMO</h1>
+  <div class="lema">“Se existir será observado. Se resistir será contido.”</div>
+  <audio autoplay loop id="sirene">
+    <source src="sirene.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+</div>
+
+<script>
+function verificarSenha() {
+  const senha = document.getElementById('senha').value;
+  if (senha === 'SOS') {
+    document.getElementById('acesso').style.display = 'none';
+    document.getElementById('container').style.display = 'block';
+    document.getElementById('sirene').play();
+  } else {
+    alert('Código incorreto.');
+  }
+}
+</script>
+
+</body>
+</html>

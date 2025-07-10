@@ -66,12 +66,11 @@
   <input type="text" id="senha">
 
   <div class="botoes">
-    <button onclick="acessarArquivos()">Arquivos</button>
-    <button onclick="acessarFuncionarios()">Funcionários</button>
-  </div>
-
-  <p id="mensagem"></p>
-
+    <div class="botoes">
+  <button onclick="acessarArquivos()">📁 Arquivos</button>
+  <button onclick="acessarFuncionarios()">🧍 Funcionários</button>
+  <button onclick="acessarOcorrencias()">⚠ Ocorrências</button>
+</div>
   <script>
     function acessarArquivos() {
       const senha = document.getElementById("senha").value.trim();
@@ -92,6 +91,16 @@
         document.getElementById("mensagem").innerText = "ACESSO NEGADO.";
       }
     }
+
+    function acessarOcorrencias() {
+  const senha = document.getElementById("senha").value.trim();
+  if (senha === "EOC") {
+    localStorage.setItem("acessoLiberado", "true");
+    window.location.href = "ocorrencias.html";
+  } else {
+    document.getElementById("mensagem").innerText = "ACESSO NEGADO.";
+  }
+}
   </script>
 
 </body>

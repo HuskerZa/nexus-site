@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Ocorrências e Incidentes</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #ff3c00;
+      font-family: 'Courier New', monospace;
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      text-shadow: 0 0 5px red;
+    }
+
+    .registro {
+      background-color: #111;
+      border-left: 6px solid #ff3c00;
+      padding: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #ff3c0033;
+    }
+
+    .registro.contido {
+      border-color: #00ff00;
+    }
+
+    .registro.instavel {
+      border-color: orange;
+    }
+
+    .registro.brecha {
+      border-color: red;
+    }
+
+    .status {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .voltar {
+      display: block;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .voltar a {
+      color: #ff3c00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .voltar a:hover {
+      text-decoration: underline;
+    }
+
+    .formulario {
+      background-color: #111;
+      padding: 20px;
+      margin-top: 30px;
+      border: 2px solid #ff3c00;
+    }
+
+    input, select {
+      background-color: #000;
+      color: #ff3c00;
+      border: 1px solid #ff3c00;
+      padding: 8px;
+      margin-bottom: 10px;
+      width: 100%;
+      font-family: 'Courier New', monospace;
+    }
+
+    button {
+      background-color: #ff3c00;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-family: 'Courier New', monospace;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: red;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📡 OCORRÊNCIAS E INCIDENTES</h1>
+
+  <!-- Ocorrências fixas -->
+  <div class="registro brecha">
+    <p>[09/07/2025 – 02:13] NX-06 escapou da cela 04B. Setor inteiro isolado.</p>
+    <p class="status">STATUS: BRECHA GRAVE</p>
+  </div>
+
+  <div class="registro instavel">
+    <p>[05/07/2025 – 18:42] Ruídos psíquicos vindos da cápsula de Sandstorm (NX-04).</p>
+    <p class="status">STATUS: INSTÁVEL</p>
+  </div>
+
+  <div class="registro contido">
+    <p>[02/07/2025 – 11:30] Contenção de NX-01 realizada com gás F-7. Nenhum agente ferido.</p>
+    <p class="status">STATUS: CONTIDO</p>
+  </div>
+
+  <!-- Área onde novas ocorrências aparecerão -->
+  <div id="novas-ocorrencias"></div>
+
+  <!-- Formulário de registro -->
+  <div class="formulario">
+    <h2>Registrar Nova Ocorrência</h2>
+    <input type="text" id="data" placeholder="Data e hora (ex: 10/07/2025 – 20:05)">
+    <input type="text" id="descricao" placeholder="Descrição do ocorrido">
+    <select id="status">
+      <option value="contido">Contido</option>
+      <option value="instavel">Instável</option>
+      <option value="brecha">Brecha Grave</option>
+    </select>
+    <button onclick="registrar()">Registrar</button>
+  </div>
+
+  <div class="voltar">
+    <a href="index.html">← Voltar ao Menu</a>
+  </div>
+
+  <script>
+    function registrar() {
+      const data = document.getElementById("data").value.trim();
+      const descricao = document.getElementById("descricao").value.trim();
+      const status = document.getElementById("status").value;
+
+      if (!data || !descricao) {
+        alert("Preencha todos os campos.");
+        return;
+      }
+
+      const novaDiv = document.createElement("div");
+      novaDiv.classList.add("registro", status);
+
+      novaDiv.innerHTML = `
+        <p>[${data}] ${descricao}</p>
+        <p class="status">STATUS: ${status.toUpperCase()}</p>
+      `;
+
+      const container = document.getElementById("novas-ocorrencias");
+      container.prepend(novaDiv);
+
+      // Limpa os campos
+      document.getElementById("data").value = "";
+      document.getElementById("descricao").value = "";
+      document.getElementById("status").value = "contido";
+    }
+  </script>
+
+</body>
+</html>

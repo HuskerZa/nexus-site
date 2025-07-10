@@ -2,180 +2,44 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>NEXUS | Arquivos</title>
+  <title>Organização NEXUS</title>
   <style>
     body {
-      background-color: #0a0a0a;
+      background-color: #000;
       color: #ff3333;
       font-family: 'Courier New', monospace;
-      margin: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
     }
-    h1, h2 {
-      color: #ff0000;
-      border-bottom: 1px solid #ff0000;
-      padding-bottom: 5px;
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0;
     }
-    .entry {
-      margin-bottom: 50px;
-      padding: 20px;
-      background-color: #1a1a1a;
-      border-left: 5px solid #ff3333;
+    p {
+      margin-bottom: 30px;
+      font-size: 1.1em;
     }
-    .poema {
-      font-style: italic;
-      color: #ff6666;
-      margin-top: 15px;
+    button {
+      background-color: #ff0000;
+      color: black;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
-    a {
-      color: #ff5555;
+    button:hover {
+      background-color: #aa0000;
     }
   </style>
 </head>
 <body>
   <h1>Organização NEXUS</h1>
-  <p>Arquivo confidencial. Acesso autorizado apenas para agentes classe N5 ou superior.</p>
-
-  <div class="entry">
-    <h2>NX-001 – Ferralk</h2>
-    <p><strong>Classe de Risco:</strong> N3 – Ameaça Controlada</p>
-    <p><strong>Altura:</strong> 2,4 m | <strong>Inteligência:</strong> Baixa | <strong>Combate:</strong> Muito Alto</p>
-    <p>Descrição: Uma criatura de aspecto brutamontes, coberta por pele metálica viva. Reage apenas com brutalidade. O som de motores o acalma.</p>
-    <p><strong>Confinamento:</strong> Cela subterrânea vibratória com motores falsos ligados 24h.</p>
-    <div class="poema">
-      No coração da forja, um grito surgiu,<br>
-      De metal e raiva, o monstro se abriu.<br>
-      Cada passo — um trovão, cada olhar — ruína,<br>
-      Feito pra matar, sem alma, sem sina.
-    </div>
-  </div>
-
-  <!-- Você pode colar aqui as entradas NX-002 até NX-010 seguindo o mesmo formato -->
-
-  <p><a href="https://github.com">Ver repositório no GitHub</a></p>
+  <p>Portal de acesso restrito. Apenas agentes autorizados.</p>
+  <button onclick="location.href='acesso.html'">ACESSAR ARQUIVOS</button>
 </body>
 </html>
-<div class="entry">
-  <h2>NX-002 – Rasthrix</h2>
-  <p><strong>Classe de Risco:</strong> N4 – Letal</p>
-  <p><strong>Altura:</strong> 1,8 m | <strong>Inteligência:</strong> Médio | <strong>Combate:</strong> Muito Alto</p>
-  <p>Descrição: Uma silhueta feita de nervos e tendões, movendo-se em velocidade invisível. Reage a desafios como se caçasse adrenalina.</p>
-  <p><strong>Confinamento:</strong> Câmara gravitacional circular com rotação reversa. Hologramas de desafios o distraem.</p>
-  <div class="poema">
-    Pés que não tocam o chão, olhos que furam o céu,<br>
-    Movimento cortante, silêncio cruel.<br>
-    Corre atrás do nada, foge do fim,<br>
-    E o mundo morre antes que ele diga sim.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-003 – Torsyn</h2>
-  <p><strong>Classe de Risco:</strong> N2 – Instável</p>
-  <p><strong>Altura:</strong> variável (padrão: 1,7 m) | <strong>Inteligência:</strong> Alto | <strong>Combate:</strong> Médio</p>
-  <p>Descrição: Massa mutável de biomassa com rosto infantil. Brinca com a realidade como se tudo fosse um jogo.</p>
-  <p><strong>Confinamento:</strong> Sala de pressão tripla com ar filtrado e som bloqueado.</p>
-  <div class="poema">
-    Brinca de ser gente, brinca de matar,<br>
-    Molda os próprios ossos só pra assustar.<br>
-    Sorri sem boca, se curva sem dor,<br>
-    Torsyn é criança sem forma, sem cor.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-004 – Carcaoss</h2>
-  <p><strong>Classe de Risco:</strong> N3 – Ameaça Controlada</p>
-  <p><strong>Altura:</strong> 2,1 m | <strong>Inteligência:</strong> Médio | <strong>Combate:</strong> Alto</p>
-  <p>Descrição: Criatura feita de ossos vivos. Cria armas com o próprio esqueleto e entra em transe quando não ameaçado.</p>
-  <p><strong>Confinamento:</strong> Câmara com campos vibracionais que bloqueiam cálcio e som de ossos se quebrando.</p>
-  <div class="poema">
-    Ossos que andam, olhos que apodrecem,<br>
-    Dentro do peito, costelas que te esquecem.<br>
-    Não respira, mas ruge com furor,<br>
-    Carcaoss, o ossário sem senhor.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-005 – Vern</h2>
-  <p><strong>Classe de Risco:</strong> N4 – Letal</p>
-  <p><strong>Altura:</strong> 1,6 m (estende até 6 m) | <strong>Inteligência:</strong> Muito Alto | <strong>Combate:</strong> Alto</p>
-  <p>Descrição: Parasita alongado com mandíbula tripla. Imita vozes humanas com perfeição para atrair vítimas.</p>
-  <p><strong>Confinamento:</strong> Câmara com luz constante e ruído branco contínuo. Nenhuma voz humana nas proximidades.</p>
-  <div class="poema">
-    Sussurros doces no escuro vão te chamar,<br>
-    Mas a voz que te chama vai te devorar.<br>
-    Se ouvir teu nome vindo de um canto qualquer,<br>
-    Corra — ou será a última vez que disser.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-006 – Hazefume</h2>
-  <p><strong>Classe de Risco:</strong> N3 – Ameaça Controlada</p>
-  <p><strong>Altura:</strong> 1,8 m | <strong>Inteligência:</strong> Alto | <strong>Combate:</strong> Médio</p>
-  <p>Descrição: Entidade gasosa de forma feminina. Produz toxinas hipnóticas e induz sonhos controlados.</p>
-  <p><strong>Confinamento:</strong> Cápsula pressurizada com oxigênio purificado e monitoramento térmico.</p>
-  <div class="poema">
-    Canta no vapor, sussurra em lençol,<br>
-    Hazefume dança sob a luz do arrebol.<br>
-    Sonha com vítimas que nunca acordam,<br>
-    E transforma pulmões em florestas que murcham.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-007 – Splitrex</h2>
-  <p><strong>Classe de Risco:</strong> N3 – Ameaça Controlada</p>
-  <p><strong>Altura:</strong> 1,75 m (cópias: 1,3 m) | <strong>Inteligência:</strong> Médio | <strong>Combate:</strong> Baixo–Médio</p>
-  <p>Descrição: Pode se dividir em até 5 cópias, cada uma acreditando ser a original. As cópias se desentendem.</p>
-  <p><strong>Confinamento:</strong> Sala giratória com ruído mental. Proibido qualquer superfície reflexiva.</p>
-  <div class="poema">
-    Qual de nós nasceu primeiro?<br>
-    Qual vai gritar? Qual é inteiro?<br>
-    Olhos nos olhos, mãos se matando,<br>
-    Splitrex se vê... e vai se quebrando.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-008 – Thornox</h2>
-  <p><strong>Classe de Risco:</strong> N2 – Instável</p>
-  <p><strong>Altura:</strong> 2,0 m | <strong>Inteligência:</strong> Baixa | <strong>Combate:</strong> Alto</p>
-  <p>Descrição: Criatura com carapaça viva coberta de espinhos pulsantes. Reage a sons agudos, mas é pacífica com objetos redondos.</p>
-  <p><strong>Confinamento:</strong> Sala esférica com brinquedos redondos liberados a cada 12h.</p>
-  <div class="poema">
-    Espinhos como suspiros, pele como muralha,<br>
-    Mas jogue-lhe uma bola, e ele se acalma.<br>
-    Só não faça barulho, não o assuste,<br>
-    Ou será a última coisa que o mundo escute.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-009 – Morphan</h2>
-  <p><strong>Classe de Risco:</strong> N3 – Ameaça Controlada</p>
-  <p><strong>Altura:</strong> 1,9 m | <strong>Inteligência:</strong> Alto | <strong>Combate:</strong> Muito Alto</p>
-  <p>Descrição: Entidade moldável. Ama construir ferramentas e formas. Fica agressivo se for impedido de criar.</p>
-  <p><strong>Confinamento:</strong> Sala com blocos industriais e sucata. Estímulo criativo automatizado.</p>
-  <div class="poema">
-    Constrói sem fim, destrói sem querer,<br>
-    Braços que viram muralha e machado.<br>
-    Morphan não briga… a não ser que impeça,<br>
-    De moldar o mundo ao que vê em sua cabeça.
-  </div>
-</div>
-
-<div class="entry">
-  <h2>NX-010 – Z-Core</h2>
-  <p><strong>Classe de Risco:</strong> N5 – Catastrófico</p>
-  <p><strong>Altura:</strong> 2,3 m | <strong>Inteligência:</strong> Muito Alto | <strong>Combate:</strong> Muito Alto</p>
-  <p>Descrição: Criatura biomecânica com duas consciências: Z (lógica) e Core (instinto). Quando entram em conflito, causam caos em massa.</p>
-  <p><strong>Confinamento:</strong> Câmara antigravitacional com resfriamento quântico e núcleo suspenso por campo invertido.</p>
-  <div class="poema">
-    Dentro do peito, um mundo em guerra,<br>
-    Duas vozes gritam: “Controle ou Terra.”<br>
-    Z quer ordem, Core quer fim,<br>
-    E se um dia vencer… não sobrará jardim.
-  </div>
-</div>

@@ -2,75 +2,114 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Acesso Restrito</title>
+  <title>Acesso Restrito | NEXUS</title>
   <style>
     body {
       background-color: #000;
       color: #ff3c00;
       font-family: 'Courier New', monospace;
       text-align: center;
-      padding-top: 80px;
+      padding: 40px;
+      background-image: repeating-linear-gradient(
+        0deg, rgba(255, 0, 0, 0.05), rgba(255, 0, 0, 0.05) 1px,
+        transparent 1px, transparent 3px
+      );
+    }
+
+    img.logo {
+      width: 100px;
+      margin-bottom: 20px;
     }
 
     h1 {
-      font-size: 32px;
-      text-shadow: 0 0 5px red;
+      font-size: 28px;
+      text-shadow: 0 0 8px red;
+    }
+
+    .terminal-text {
+      font-size: 16px;
+      animation: blink 1s infinite;
+      margin: 10px 0 30px;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
     }
 
     input {
+      background-color: #000;
+      color: #ff3c00;
+      border: 1px solid #ff3c00;
       padding: 10px;
       width: 250px;
-      border: none;
-      border-radius: 4px;
-      margin-top: 20px;
-      background-color: #111;
-      color: #ff3c00;
+      font-family: 'Courier New', monospace;
     }
 
     .botoes {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-      flex-wrap: wrap;
+      margin-top: 20px;
     }
 
-    button {
+    .botoes button {
       background-color: #ff3c00;
       color: black;
+      border: none;
+      padding: 12px 20px;
+      margin: 10px;
+      cursor: pointer;
       font-weight: bold;
       font-family: 'Courier New', monospace;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      box-shadow: 0 0 5px red;
     }
 
-    button:hover {
-      background-color: #ff0000;
+    .botoes button:hover {
+      background-color: red;
       color: white;
     }
 
     #mensagem {
+      margin-top: 15px;
+      font-weight: bold;
+      color: red;
+    }
+
+    #som-btn {
+      background-color: transparent;
+      border: 1px solid #ff3c00;
+      color: #ff3c00;
       margin-top: 20px;
-      color: white;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    #secreto {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-  <h1>Acesso Restrito</h1>
-  <p>Digite a credencial:</p>
+  <!-- Logo da NEXUS -->
+  <img src="logo-nexus.jpg" alt="NEXUS Logo" class="logo">
 
-  <input type="text" id="senha">
+  <h1>ACESSO RESTRITO</h1>
+  <p class="terminal-text">:: DIGITE SUA CREDENCIAL ::</p>
 
+  <input type="password" id="senha" placeholder="Senha de acesso">
   <div class="botoes">
-    <div class="botoes">
-  <button onclick="acessarArquivos()">📁 Arquivos</button>
-  <button onclick="acessarFuncionarios()">🧍 Funcionários</button>
-  <button onclick="acessarOcorrencias()">⚠ Ocorrências</button>
-</div>
+    <button onclick="acessarArquivos()">📁 Arquivos</button>
+    <button onclick="acessarFuncionarios()">🧍 Funcionários</button>
+    <button onclick="acessarOcorrencias()">⚠ Ocorrências</button>
+    <button id="secreto" onclick="acessarSecreto()">🕳 Projeto NECRÓX</button>
+  </div>
+
+  <p id="mensagem"></p>
+  <button id="som-btn" onclick="toggleSom()">Ativar Som Ambiente</button>
+
+  <audio id="ambiente" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/20/audio_03c10bc0d1.mp3" type="audio/mpeg">
+  </audio>
+
   <script>
     function acessarArquivos() {
       const senha = document.getElementById("senha").value.trim();
@@ -93,15 +132,43 @@
     }
 
     function acessarOcorrencias() {
-  const senha = document.getElementById("senha").value.trim();
-  if (senha === "EOC") {
-    localStorage.setItem("acessoLiberado", "true");
-    window.location.href = "ocorrencias.html";
-  } else {
-    document.getElementById("mensagem").innerText = "ACESSO NEGADO.";
-  }
-}
-</script>
+      const senha = document.getElementById("senha").value.trim();
+      if (senha === "EOC") {
+        localStorage.setItem("acessoLiberado", "true");
+        window.location.href = "ocorrencias.html";
+      } else {
+        document.getElementById("mensagem").innerText = "ACESSO NEGADO.";
+      }
+    }
+
+    function acessarSecreto() {
+      alert("🔒 Acessando Projeto NECRÓX...");
+      window.location.href = "necrox.html";
+    }
+
+    function toggleSom() {
+      const audio = document.getElementById("ambiente");
+      const btn = document.getElementById("som-btn");
+      if (audio.paused) {
+        audio.play();
+        btn.innerText = "Desativar Som Ambiente";
+      } else {
+        audio.pause();
+        btn.innerText = "Ativar Som Ambiente";
+      }
+    }
+
+    // Detecta a senha secreta para liberar botão oculto
+    document.getElementById("senha").addEventListener("input", function () {
+      const senha = this.value.trim();
+      const botaoSecreto = document.getElementById("secreto");
+      if (senha === "NECRO-X") {
+        botaoSecreto.style.display = "inline-block";
+      } else {
+        botaoSecreto.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
-</html
+</html>
